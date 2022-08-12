@@ -12,3 +12,7 @@ In the project directory, you can run the following scripts
 * `yarn build` (or `npm run build`)
 
 * `yarn eject` (or `npm run eject`)
+
+## Docker (and Docker Compose)
+
+* `docker-compose up`
