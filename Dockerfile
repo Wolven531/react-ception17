@@ -15,7 +15,7 @@ RUN yarn
 
 COPY . .
 
-EXPOSE 3006
+EXPOSE 3017
 
 # set perms
 # USER node
