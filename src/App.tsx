@@ -3,11 +3,8 @@ import { Link, Route, useHistory } from "react-router-dom";
 import type { History } from "history";
 import "./App.css";
 
-const loadPlugins = (
-  // navState$: Subject<any>,
-  history: History
-) => {
-  console.log("[FakePortal] loaded, adding init event listener");
+const loadPlugins = (history: History) => {
+  console.log("adding init event listener");
 
   window.document.addEventListener(
     "init",
@@ -15,11 +12,10 @@ const loadPlugins = (
       const userLoadedEvt = new CustomEvent("user-loaded", {
         detail: {
           history,
-          // navState: navState$,
         },
       });
 
-      console.log("[FakePortal] init received, firing user-loaded");
+      console.log("init event received, firing user-loaded");
       window.document.dispatchEvent(userLoadedEvt);
     }) as EventListener,
     {
@@ -28,7 +24,9 @@ const loadPlugins = (
     }
   );
 
-  console.log("[FakePortal] requiring FakePluginLayout + FakeNav");
+  // !! in a real world app, below could be a dynamic load (e.g. from a URL)
+  // !! rather than a local require invocation
+  console.log("loading FakePluginLayout + FakeNav w/ require()");
 
   require("./FakePluginLayout");
   // require("./FakeNav")
@@ -37,48 +35,31 @@ const loadPlugins = (
 export const App: FC = () => {
   const history = useHistory();
 
-  // const navState$ = useMemo(() => {
-  //   const s = new Subject<any>()
-
-  //   s.subscribe(evt => {
-  //     console.log("[FakePortal] evt happened", evt)
-  //   })
-
-  //   return s;
-  // }, []);
-
   useLayoutEffect(() => {
-    console.log(`[FakePortal] loaded; i am at ${history.location.pathname}`);
+    console.log(`[App] loaded; about to loadPlugins`);
 
     loadPlugins(history);
-
-    // return () => {
-    //   navState$.unsubscribe()
-    // };
-  }, [
-    history,
-    // navState$,
-  ]);
+  }, [history]);
 
   const handleClick = () => {
-    console.log("[FakePortal] button was clicked");
+    console.log("[App] button was clicked");
   };
 
   return (
     <>
-      <h1>FakePortal - React 17</h1>
+      <h1>App Host - React 17</h1>
       <Route path={"/"} exact>
         <div className="app" id="app">
-          <p>FakePortal root</p>
-          <Link to="/asdf">asdf (from FakePortal)</Link>
+          <h2>App Host root</h2>
+          <Link to="/asdf">asdf (from App Host)</Link>
           <br />
-          <button onClick={handleClick}>FakePortal button</button>
+          <button onClick={handleClick}>App Host button</button>
         </div>
       </Route>
       <Route path={"/asdf"}>
         <div>
-          <Link to="/">Home (from App)</Link>
-          <p>asdf from FakePortal</p>
+          <h2>asdf from App Host</h2>
+          <Link to="/">Home (from App Host)</Link>
         </div>
       </Route>
       <hr />

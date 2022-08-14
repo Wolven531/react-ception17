@@ -3,23 +3,23 @@
 exports[`App renders view that matches snapshot 1`] = `
 <DocumentFragment>
   <h1>
-    FakePortal - React 17
+    App Host - React 17
   </h1>
   <div
     class="app"
     id="app"
   >
-    <p>
-      FakePortal root
-    </p>
+    <h2>
+      App Host root
+    </h2>
     <a
       href="/asdf"
     >
-      asdf (from FakePortal)
+      asdf (from App Host)
     </a>
     <br />
     <button>
-      FakePortal button
+      App Host button
     </button>
   </div>
   <hr />
