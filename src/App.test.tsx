@@ -4,7 +4,7 @@ import { App } from "./App";
 import { MemoryRouter } from "react-router";
 
 describe("App", () => {
-  it("renders view", () => {
+  it("renders view that matches snapshot", () => {
     const view = render(
       <MemoryRouter>
         <App />

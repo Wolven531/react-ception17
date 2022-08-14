@@ -32,8 +32,10 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
+    "snaps": "react-scripts test --watchAll=false -u",
     "start": "cross-env PORT=3017 react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test --watchAll=true"
   },
   "eslintConfig": {
     "extends": [
