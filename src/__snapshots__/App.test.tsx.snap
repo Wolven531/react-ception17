@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders view 1`] = `
+<DocumentFragment>
+  <h1>
+    FakePortal - React 17
+  </h1>
+  <div
+    class="app"
+    id="app"
+  >
+    <p>
+      FakePortal root
+    </p>
+    <a
+      href="/asdf"
+    >
+      asdf (from FakePortal)
+    </a>
+    <br />
+    <button>
+      FakePortal button
+    </button>
+  </div>
+  <hr />
+  <div
+    id="placeholder-2"
+  >
+    <div
+      class="FakePluginLayout"
+    >
+      <p>
+        FakePluginLayout (injected)
+      </p>
+      <a
+        href="/asdf"
+      >
+        asdf (from FakePluginLayout)
+      </a>
+      <br />
+      <button>
+        FakePluginLayout button
+      </button>
+    </div>
+  </div>
+  <div
+    id="placeholder-3"
+  />
+</DocumentFragment>
+`;

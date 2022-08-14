@@ -1,6 +1,16 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import React from "react";
+import { render } from "@testing-library/react";
+import { App } from "./App";
+import { MemoryRouter } from "react-router";
 
-test('truthy', () => {
-  expect(true).toBeTruthy()
+describe("App", () => {
+  it("renders view", () => {
+    const view = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(view.asFragment()).toMatchSnapshot();
+  });
 });
