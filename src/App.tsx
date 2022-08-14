@@ -1,44 +1,16 @@
 import React, { FC, useLayoutEffect } from "react";
 import { Link, Route, useHistory } from "react-router-dom";
-import type { History } from "history";
+import { connectAppInit, loadApps } from "./utils/inject";
 import "./App.css";
-
-const loadPlugins = (history: History) => {
-  console.log("adding init event listener");
-
-  window.document.addEventListener(
-    "init",
-    ((e: CustomEvent<any>) => {
-      const userLoadedEvt = new CustomEvent("user-loaded", {
-        detail: {
-          history,
-        },
-      });
-
-      console.log("init event received, firing user-loaded");
-      window.document.dispatchEvent(userLoadedEvt);
-    }) as EventListener,
-    {
-      capture: true,
-      once: false, // allow for multiple init events
-    }
-  );
-
-  // !! in a real world app, below could be a dynamic load (e.g. from a URL)
-  // !! rather than a local require invocation
-  console.log("loading FakePluginLayout + FakeNav w/ require()");
-
-  require("./FakePluginLayout");
-  // require("./FakeNav")
-};
 
 export const App: FC = () => {
   const history = useHistory();
 
   useLayoutEffect(() => {
-    console.log(`[App] loaded; about to loadPlugins`);
+    console.log(`[App] loaded; about to load apps`);
 
-    loadPlugins(history);
+    connectAppInit(history);
+    loadApps();
   }, [history]);
 
   const handleClick = () => {
