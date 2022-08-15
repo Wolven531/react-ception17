@@ -1,8 +1,8 @@
 import { createElement } from "react";
 import { render } from "react-dom";
-import { FakePluginLayout } from "./FakePluginLayout";
+import { IsolatedAppOne } from "./IsolatedAppOne";
 
-export * from "./FakePluginLayout";
+export * from "./IsolatedAppOne";
 
 const elemContainerFromParent = document.getElementById(
   "placeholder-2"
@@ -10,15 +10,15 @@ const elemContainerFromParent = document.getElementById(
 
 const initPlugin = () => {
   console.log(
-    "[FakePluginLayout/index.ts] loaded, adding user-loaded event listener"
+    "[IsolatedAppOne/index.ts] loaded, adding user-loaded event listener"
   );
 
   window.document.addEventListener(
     "user-loaded", // listen for user event
     ((e: CustomEvent<any>) => {
-      console.log("[FakePluginLayout/index.ts] user-loaded, rendering...");
+      console.log("[IsolatedAppOne/index.ts] user-loaded, rendering...");
 
-      const elem = createElement(FakePluginLayout, {
+      const elem = createElement(IsolatedAppOne, {
         // evt$: e.detail.navState,
         history: e.detail.history,
         key: "fake-plugin-layout",
@@ -36,7 +36,7 @@ const initPlugin = () => {
     detail: {},
   });
 
-  console.log("[FakePluginLayout/index.ts] firing init");
+  console.log("[IsolatedAppOne/index.ts] firing init");
 
   window.document.dispatchEvent(pluginInitEvt); // fire plugin init event
 };

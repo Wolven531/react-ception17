@@ -2,11 +2,11 @@
 import { createElement } from "react";
 import { render } from "react-dom";
 // import { createRoot } from "react-dom/client";
-import { FakeNav } from "./FakeNav";
+import { IsolatedAppTwo } from "./IsolatedAppTwo";
 
-console.log("[FakeNav/index.ts] loaded");
+console.log("[IsolatedAppTwo/index.ts] loaded");
 
-export * from "./FakeNav";
+export * from "./IsolatedAppTwo";
 
 const elemContainerFromParent = document.getElementById(
   "placeholder-3"
@@ -14,7 +14,7 @@ const elemContainerFromParent = document.getElementById(
 // const container = document.getElementById("app") as HTMLElement;
 
 if (elemContainerFromParent) {
-  const elem = createElement(FakeNav, {});
+  const elem = createElement(IsolatedAppTwo, {});
   render(elem, elemContainerFromParent);
 } else {
   console.warn("no container");

@@ -34,8 +34,8 @@ export const connectAppInit = (history: History) => {
 export const loadApps = () => {
   // !! in a real world app, below could be a dynamic load (e.g. from a URL)
   // !! rather than a local require invocation
-  console.log("loading FakePluginLayout + FakeNav w/ require()");
+  console.log("loading IsolatedAppOne + IsolatedAppTwo w/ require()");
 
-  require("../FakePluginLayout");
-  // require("../FakeNav")
+  require("../IsolatedAppOne");
+  // require("../IsolatedAppTwo")
 };

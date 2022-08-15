@@ -27,19 +27,19 @@ exports[`App renders view that matches snapshot 1`] = `
     id="placeholder-2"
   >
     <div
-      class="FakePluginLayout"
+      class="IsolatedAppOne"
     >
-      <p>
-        FakePluginLayout (injected)
-      </p>
+      <h2>
+        IsolatedAppOne (injected)
+      </h2>
       <a
         href="/asdf"
       >
-        asdf (from FakePluginLayout)
+        asdf (from IsolatedAppOne)
       </a>
       <br />
       <button>
-        FakePluginLayout button
+        IsolatedAppOne button
       </button>
     </div>
   </div>
