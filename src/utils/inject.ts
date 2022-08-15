@@ -74,5 +74,5 @@ export const loadApps = () => {
   console.log("loading IsolatedAppOne + IsolatedAppTwo w/ require()");
 
   require("../IsolatedAppOne");
-  // require("../IsolatedAppTwo")
+  require("../IsolatedAppTwo")
 };
