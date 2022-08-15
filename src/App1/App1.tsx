@@ -10,9 +10,7 @@ export const App1: FC<IApp1> = ({ history }) => {
   };
 
   useEffect(() => {
-    console.log(
-      `[App1] loaded; i am at ${history.location.pathname}`
-    );
+    console.log(`[App1] loaded; i am at ${history.location.pathname}`);
   }, [history.location.pathname]);
 
   return (

@@ -5,15 +5,13 @@ import type { IHasHistory } from "../utils/inject";
 export interface IApp2 extends IHasHistory {}
 
 export const App2: FC<IApp2> = ({ history }) => {
-  useEffect(() => {
-    console.log(
-      `[App2] loaded; i am at ${history.location.pathname}`
-    );
-  }, [history.location.pathname]);
-
   const handleClick = () => {
     console.log("[App2] button was clicked");
   };
+
+  useEffect(() => {
+    console.log(`[App2] loaded; i am at ${history.location.pathname}`);
+  }, [history.location.pathname]);
 
   return (
     <Router history={history}>
