@@ -27,24 +27,41 @@ exports[`App renders view that matches snapshot 1`] = `
     id="placeholder-2"
   >
     <div
-      class="IsolatedAppOne"
+      class="App1"
     >
       <h2>
-        IsolatedAppOne (injected)
+        App1 (injected)
       </h2>
       <a
         href="/asdf"
       >
-        asdf (from IsolatedAppOne)
+        asdf (from App1)
       </a>
       <br />
       <button>
-        IsolatedAppOne button
+        App1 button
       </button>
     </div>
   </div>
   <div
     id="placeholder-3"
-  />
+  >
+    <div
+      class="App2"
+    >
+      <h2>
+        App2 (injected)
+      </h2>
+      <a
+        href="/asdf"
+      >
+        asdf (from App2)
+      </a>
+      <br />
+      <button>
+        App2 button
+      </button>
+    </div>
+  </div>
 </DocumentFragment>
 `;

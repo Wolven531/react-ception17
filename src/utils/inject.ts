@@ -71,8 +71,8 @@ export const initApp = (comp: FC<IHasHistory>, container: Container) => {
 export const loadApps = () => {
   // !! in a real world app, below could be a dynamic load (e.g. from a URL)
   // !! rather than a local require invocation
-  console.log("loading IsolatedAppOne + IsolatedAppTwo w/ require()");
+  console.log("loading App1 + App2 w/ require()");
 
-  require("../IsolatedAppOne");
-  require("../IsolatedAppTwo")
+  require("../App1");
+  require("../App2")
 };
