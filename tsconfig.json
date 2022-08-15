@@ -1,26 +1,40 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // whether to produce an artifact
+    "noEmit": false,
+
+    // types output
+    "declaration": false,
+    "declarationMap": false,
+
+    // for esnext build
+    "module": "esnext",
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "outDir": "build",
+
+    // for AMD build
+    // "module": "AMD",
+    // "outFile": "build/artifact.amd.js",
+
+    // for System build
+    // "module": "System",
+    // "outFile": "build/artifact.js",
+    // "resolveJsonModule": false,
+
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES6"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["src/**/setupTests.ts", "src/**/*.test.tsx"]
 }
