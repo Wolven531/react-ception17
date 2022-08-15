@@ -1,5 +1,5 @@
-import React, { FC, useEffect } from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { FC, useEffect } from "react";
+import { Link, Route, Router } from "react-router-dom";
 import { IHasHistory } from "../utils/inject";
 
 export interface IIsolatedAppTwo extends IHasHistory {}
@@ -16,7 +16,7 @@ export const IsolatedAppTwo: FC<IIsolatedAppTwo> = ({ history }) => {
   };
 
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Route path={"/"} exact>
         <div className="IsolatedAppTwo">
           <h2>IsolatedAppTwo (injected)</h2>
@@ -31,6 +31,6 @@ export const IsolatedAppTwo: FC<IIsolatedAppTwo> = ({ history }) => {
           <Link to="/">Home (from IsolatedAppTwo)</Link>
         </div>
       </Route>
-    </BrowserRouter>
+    </Router>
   );
 };
