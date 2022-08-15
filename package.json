@@ -6,6 +6,8 @@
     "name": "Anthony Williams",
     "url": "https://github.com/Wolven531/react-ception17"
   },
+  "type": "module",
+  "types": "src/types.d.ts",
   "license": "MIT",
   "private": false,
   "dependencies": {

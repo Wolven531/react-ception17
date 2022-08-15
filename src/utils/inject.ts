@@ -1,10 +1,7 @@
 import type { History } from "history";
 import { createElement, FC } from "react";
 import { Container, render } from "react-dom";
-
-export interface IHasHistory {
-  history: History;
-}
+import type { IHasHistory } from "../types";
 
 /**
  * This function wires up an event listener so that injected apps can receive shared data. It
@@ -74,5 +71,5 @@ export const loadApps = () => {
   console.log("loading App1 + App2 w/ require()");
 
   require("../App1");
-  require("../App2")
+  require("../App2");
 };

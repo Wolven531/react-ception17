@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import { Link, Route, Router } from "react-router-dom";
-import type { IHasHistory } from "../utils/inject";
+import type { IHasHistory } from "../types";
 
 export interface IApp1 extends IHasHistory {}
 
