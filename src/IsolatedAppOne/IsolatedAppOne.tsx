@@ -1,14 +1,10 @@
 import React, { FC, useEffect } from "react";
 import { Link, Route, Router } from "react-router-dom";
-import type { History } from "history";
+import { IHasHistory } from "../utils/inject";
 
-export interface IIsolatedAppOne {
-  history: History;
-}
+export interface IIsolatedAppOne extends IHasHistory {}
 
-export const IsolatedAppOne: FC<IIsolatedAppOne> = ({
-  history,
-}) => {
+export const IsolatedAppOne: FC<IIsolatedAppOne> = ({ history }) => {
   const handleClick = () => {
     console.log("[IsolatedAppOne] button was clicked");
   };
