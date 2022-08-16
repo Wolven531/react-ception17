@@ -5,13 +5,17 @@ import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
+console.info("[App] about to render");
+
+const htmlId = "root";
+
 render(
   <StrictMode>
     <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   </StrictMode>,
-  window.document.getElementById("root") as HTMLElement
+  window.document.getElementById(htmlId) as HTMLElement
 );
 
 // If you want to start measuring performance in your app, pass a function

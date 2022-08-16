@@ -1,4 +1,8 @@
-import React, { FC, useLayoutEffect } from "react";
+import React, {
+  FC,
+  useEffect,
+  // useLayoutEffect
+} from "react";
 import { Link, Route, useHistory } from "react-router-dom";
 import { connectAppInit, loadApps } from "./utils/inject";
 import "./App.css";
@@ -6,16 +10,19 @@ import "./App.css";
 export const App: FC = () => {
   const history = useHistory();
 
-  useLayoutEffect(() => {
-    console.log(`[App] loaded; about to load apps`);
+  const handleClick = () => {
+    console.log("[App] button was clicked");
+  };
+
+  useEffect(() => {
+    //   useLayoutEffect(() => {
+    console.info(`[App] loaded; about to load apps`);
 
     connectAppInit(history);
     loadApps();
   }, [history]);
 
-  const handleClick = () => {
-    console.log("[App] button was clicked");
-  };
+  console.info("[App] about to render");
 
   return (
     <>
