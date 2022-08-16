@@ -10,8 +10,10 @@ export const App2: FC<IApp2> = ({ history }) => {
   };
 
   useEffect(() => {
-    console.log(`[App2] loaded; i am at ${history.location.pathname}`);
+    console.info(`[App2] loaded; i am at ${history.location.pathname}`);
   }, [history.location.pathname]);
+
+  console.info("[App2] about to render");
 
   return (
     <Router history={history}>
