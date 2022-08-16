@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders view that matches snapshot 1`] = `
+exports[`AppHost renders view that matches snapshot 1`] = `
 <DocumentFragment>
   <h1>
     App Host - React 17
