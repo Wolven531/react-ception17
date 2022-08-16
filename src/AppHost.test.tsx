@@ -1,13 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { App } from './App'
+import { AppHost } from './AppHost'
 import { MemoryRouter } from 'react-router'
 
-describe('App', () => {
+describe('AppHost', () => {
 	it('renders view that matches snapshot', () => {
 		const view = render(
 			<MemoryRouter>
-				<App />
+				<AppHost />
 			</MemoryRouter>,
 		)
 

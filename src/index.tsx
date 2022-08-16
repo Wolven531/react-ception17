@@ -1,18 +1,18 @@
 import React, { StrictMode } from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { App } from './App'
+import { AppHost } from './AppHost'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
 
-console.info('[App] about to render')
+console.info('[index] about to render')
 
 const htmlId = 'root'
 
 render(
 	<StrictMode>
 		<BrowserRouter basename="/">
-			<App />
+			<AppHost />
 		</BrowserRouter>
 	</StrictMode>,
 	window.document.getElementById(htmlId) as HTMLElement,

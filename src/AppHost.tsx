@@ -5,24 +5,24 @@ import React, {
 } from 'react'
 import { Link, Route, useHistory } from 'react-router-dom'
 import { connectAppInit, loadApps } from './utils/inject'
-import './App.css'
+import './AppHost.css'
 
-export const App: FC = () => {
+export const AppHost: FC = () => {
 	const history = useHistory()
 
 	const handleClick = () => {
-		console.log('[App] button was clicked')
+		console.log('[AppHost] button was clicked')
 	}
 
 	useEffect(() => {
 		//   useLayoutEffect(() => {
-		console.info(`[App] loaded; about to load apps`)
+		console.info(`[AppHost] loaded; about to load apps`)
 
 		connectAppInit(history)
 		loadApps()
 	}, [history])
 
-	console.info('[App] about to render')
+	console.info('[AppHost] about to render')
 
 	return (
 		<>
